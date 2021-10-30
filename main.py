@@ -42,4 +42,4 @@ for i in notasFinales:
 print("DE MIDI A NOTA:", notasName)
 
 # CREAR MIDI FILE #
-createMidi.createMidiFile(notasFinales, velocityFinales, "MelodySix.mid")
+createMidi.createMidiFile(notasFinales, velocityFinales, "Melody.mid")

@@ -24,5 +24,5 @@ def createMidiFile(notas, velocities, inName):
         cont += 1
 
     # write it to disk
-    with open("/Users/jsvaldezv/Downloads/" + inName, 'wb') as outf:
+    with open("melodies/" + inName, 'wb') as outf:
         mf.writeFile(outf)
