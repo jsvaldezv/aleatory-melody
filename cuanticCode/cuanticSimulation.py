@@ -6,6 +6,7 @@ from AleatoryMelody import createMidi
 from AleatoryMelody import rangeNote
 import numpy as np
 
+
 # ############# SIMULATOR IMPLEMENTATION #######
 # YOU CAN RUN IT EVERYWHERE, JUST INSTALL THE LIBRARIES
 def hadamard_circuit(n_qubits):
@@ -16,7 +17,6 @@ def hadamard_circuit(n_qubits):
 
 
 def generateNotas(inNum, inRangeLeft, inRangeRight, inType):
-
     countNotas = 0
     notasFinales = []
     countNotas = 0
@@ -53,7 +53,7 @@ state = hadamard_circuit(n_qubits)
 
 # GENERAR RANGOS POSIBLES EN ESCALAS MAYORES #
 MajorScale = np.array([0, 2, 4, 5, 7, 9, 11])
-MajorScale = np.append(MajorScale, [[MajorScale+12 * i] for i in range(1, 9)])
+MajorScale = np.append(MajorScale, [[MajorScale + 12 * i] for i in range(1, 9)])
 scale = rangeNote.calculateRangeNote("C", MajorScale)
 
 # MAKE RANDOM NUMBERS

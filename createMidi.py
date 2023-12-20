@@ -1,5 +1,6 @@
 from midiutil.MidiFile import MIDIFile
 
+
 # CREATE MIDI FILE #
 def createMidiFile(notas, velocities, inName):
     # create your MIDI object
@@ -24,5 +25,5 @@ def createMidiFile(notas, velocities, inName):
         cont += 1
 
     # write it to disk
-    with open("melodies/" + inName, 'wb') as outf:
+    with open("melodies/" + inName, "wb") as outf:
         mf.writeFile(outf)

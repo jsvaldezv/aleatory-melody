@@ -7,7 +7,7 @@ import createMidi
 
 # GENERAR RANGOS POSIBLES EN ESCALAS MAYORES #
 MajorScale = np.array([0, 2, 4, 5, 7, 9, 11])
-MajorScale = np.append(MajorScale, [[MajorScale+12 * i] for i in range(1, 9)])
+MajorScale = np.append(MajorScale, [[MajorScale + 12 * i] for i in range(1, 9)])
 
 # CALCULATE RANGE NOTES Y DECIDIR FUNDAMENTAL #
 note = "C"

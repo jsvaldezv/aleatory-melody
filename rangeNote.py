@@ -1,5 +1,4 @@
 def calculateRangeNote(note, MajorScale):
-
     if note == "C":
         scale = 12 + MajorScale
     elif note == "C#":

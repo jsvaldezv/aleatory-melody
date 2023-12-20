@@ -15,7 +15,6 @@ def hadamard_circuit(n_qubits):
 
 
 def generateNotas(inNum, inRangeLeft, inRangeRight, inType, inLocation):
-
     countNotas = 0
     notasFinales = []
     countNotas = 0
@@ -47,13 +46,13 @@ def generateNotas(inNum, inRangeLeft, inRangeRight, inType, inLocation):
 
 # GENERAR RANGOS POSIBLES EN ESCALAS MAYORES #
 MajorScale = np.array([0, 2, 4, 5, 7, 9, 11])
-MajorScale = np.append(MajorScale, [[MajorScale+12 * i] for i in range(1, 9)])
+MajorScale = np.append(MajorScale, [[MajorScale + 12 * i] for i in range(1, 9)])
 scale = rangeNote.calculateRangeNote("C", MajorScale)
 
 # DEFINE CIRCUIT
 # OBTAIN BUCKET FROM AMAZON BRAKET CONSOLE
-my_bucket = "amazon-braket-9a1ba65bbf6c" # the name of the bucket
-my_prefix = "Your-Folder-Name" # the name of the folder in the bucket
+my_bucket = "amazon-braket-9a1ba65bbf6c"  # the name of the bucket
+my_prefix = "Your-Folder-Name"  # the name of the folder in the bucket
 s3_folder = (my_bucket, my_prefix)
 
 # SPECIFIY CUANTIC MACHINE YOU ARE GOIN TO RUN THE PROGRAM
@@ -67,7 +66,7 @@ print("Melodia 1")
 generateNotas(16, 21, 109, "Note:", s3_folder)
 generateNotas(16, 10, 127, "Velocity:", s3_folder)
 
-'''
+"""
 IONQ
 Melodia 1
 Note: [67, 84, 88, 103, 24, 43, 40, 52, 62, 76, 88, 84, 95, 59, 47, 57]
@@ -87,4 +86,4 @@ Velocity: [26, 119, 92, 14, 119, 33, 27, 82, 102, 115, 52, 101, 35, 51, 124, 23]
 Melodia 6
 Note: [108, 26, 76, 89, 95, 88, 65, 33, 62, 65, 35, 47, 35, 45, 108, 69]
 Velocity: [16, 31, 12, 120, 45, 78, 126, 86, 73, 54, 76, 42, 70, 72, 25, 72]
-'''
+"""
