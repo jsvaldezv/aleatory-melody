@@ -1,20 +1,19 @@
 from midiutil.MidiFile import MIDIFile
 
 
-# CREATE MIDI FILE #
+# Create midi file
 def createMidiFile(notas, velocities, inName):
-    # create your MIDI object
-    mf = MIDIFile(1)  # only 1 track
-    track = 0  # the only track
+    mf = MIDIFile(1)
+    track = 0
 
-    time = 0  # start at the beginning
-    mf.addTrackName(track, time, "Prueba Uno")
+    time = 0
+    mf.addTrackName(track, time, "Test One")
     mf.addTempo(track, time, 120)
 
     cont = 0
     channel = 0
-    duration = 1  # 1 beat long
-    time = 0  # start on beat 0
+    duration = 1
+    time = 0
 
     for i in range(len(notas)):
         pitch = notas[cont]
@@ -24,6 +23,6 @@ def createMidiFile(notas, velocities, inName):
         time += 1
         cont += 1
 
-    # write it to disk
+    # Write it to disk
     with open("melodies/" + inName, "wb") as outf:
         mf.writeFile(outf)

@@ -1,3 +1,4 @@
 black==23.*
 MIDIUtil==1.*
 numpy==1.*
+black==23.*

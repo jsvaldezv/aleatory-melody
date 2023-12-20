@@ -1,23 +1,22 @@
-# IMPORTS #
 import numpy as np
 from random import randint
 import rangeNote
 import midiToNote
 import createMidi
 
-# GENERAR RANGOS POSIBLES EN ESCALAS MAYORES #
+# Generate possible ranges in major scales
 MajorScale = np.array([0, 2, 4, 5, 7, 9, 11])
 MajorScale = np.append(MajorScale, [[MajorScale + 12 * i] for i in range(1, 9)])
 
-# CALCULATE RANGE NOTES Y DECIDIR FUNDAMENTAL #
+# Calculate note ranges and dedicing root note
 note = "C"
 scale = rangeNote.calculateRangeNote(note, MajorScale)
-print("ESCALA:", note, "MAYOR")
+print("Scale:", note, "major")
 
-# DEFINIR RANGO DE OCTAVAS EN PIANO #
+# Define range in octaves
 pianoRange = range(21, 109)
 
-# PLAY AND RECOLECT RANDOM NOTES #
+# Play and collect random notes
 notasFinales = []
 velocityFinales = []
 countNotas = 0
@@ -31,15 +30,15 @@ while countNotas < 16:
             velocityFinales.append(velocity)
             countNotas += 1
 
-print("NOTAS:", notasFinales)
-print("VELOCITY:", velocityFinales)
+print("Notes:", notasFinales)
+print("Velocity:", velocityFinales)
 
-# MIDI A NOTA MUSICAL #
+# MIDI to musical note
 notasName = []
 for i in notasFinales:
     notasName.append(midiToNote.number_to_note(i))
 
-print("DE MIDI A NOTA:", notasName)
+print("From MIDI to note:", notasName)
 
-# CREAR MIDI FILE #
-createMidi.createMidiFile(notasFinales, velocityFinales, "Melody.mid")
+# Create MIDI File
+createMidi.createMidiFile(notasFinales, velocityFinales, "melodies/Melody.mid")
